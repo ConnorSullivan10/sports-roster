@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import firebase from 'firebase/firebase-app';
+import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connection';
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
@@ -32,6 +32,7 @@ class App extends React.Component {
     if (!authed) {
       return (<Auth />);
     }
+    return (<div>Stuff</div>);
   }
 
   render() {
