@@ -4,6 +4,7 @@ import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connection';
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
+import playerData from '../helpers/data/playerData';
 import './App.scss';
 
 firebaseConnection();
@@ -11,6 +12,7 @@ firebaseConnection();
 class App extends React.Component {
   state = {
     authed: false,
+    players: [],
   }
 
   componentDidMount() {
