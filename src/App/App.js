@@ -32,7 +32,7 @@ class App extends React.Component {
     if (!authed) {
       return (<Auth />);
     }
-    return (<div>Stuff</div>);
+    return (<div>Team Component Placeholder</div>);
   }
 
   render() {
