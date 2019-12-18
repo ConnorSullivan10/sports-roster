@@ -1,28 +1,49 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import logo from './logo.svg';
+import firebase from 'firebase/app';
+import firebaseConnection from '../helpers/data/connection';
+import Auth from '../components/Auth/Auth';
+import MyNavbar from '../components/MyNavbar/MyNavbar';
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button className="btn btn-success">Sports Roster</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+firebaseConnection();
+
+class App extends React.Component {
+  state = {
+    authed: false,
+  }
+
+  componentDidMount() {
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ authed: true });
+      } else {
+        this.setState({ authed: false });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.removeListener();
+  }
+
+  renderView = () => {
+    const { authed } = this.state;
+    if (!authed) {
+      return (<Auth />);
+    }
+    return (<div>Team Component Placeholder</div>);
+  }
+
+  render() {
+    const { authed } = this.state;
+    return (
+      <div className="App">
+        <MyNavbar authed={authed}/>
+        { this.renderView() }
+      </div>
+    );
+  }
 }
 
 export default App;
