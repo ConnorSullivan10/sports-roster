@@ -4,7 +4,7 @@ import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connection';
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
-import playerData from '../helpers/data/playerData';
+import Team from '../components/Team/Team';
 import './App.scss';
 
 firebaseConnection();
@@ -12,7 +12,6 @@ firebaseConnection();
 class App extends React.Component {
   state = {
     authed: false,
-    players: [],
   }
 
   componentDidMount() {
@@ -34,7 +33,7 @@ class App extends React.Component {
     if (!authed) {
       return (<Auth />);
     }
-    return (<div>Team Component Placeholder</div>);
+    return (<Team players={this.state.players}/>);
   }
 
   render() {
