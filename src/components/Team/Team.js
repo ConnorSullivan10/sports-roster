@@ -1,19 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Player from '../Player/Player';
-import playerShape from '../../helpers/props/playerShape';
+import authData from '../../helpers/data/authData';
+import playerData from '../../helpers/data/playerData';
 
 class Team extends React.Component {
-  static propTypes = {
-    players: PropTypes.arrayOf(playerShape.playerShape),
+  state = {
+    players: [],
+  }
+
+  componentDidMount() {
+    this.getPlayers();
+  }
+
+  getPlayers = () => {
+    playerData.getPlayersByUid(authData.getUid())
+      .then((players) => {
+        this.setState({ players });
+      })
+      .catch((errFromTeam) => console.error({ errFromTeam }));
   }
 
   render() {
-    const myPlayers = this.props.players;
-    const playerCards = myPlayers.map((player) => <Player key={player.id} player={player} />);
     return (
-      <div>
-        {playerCards}
+      <div className="Team d-flex flex-wrap">
+       {this.state.players.map((player) => (<Player key={player.id} player={player} />))}
       </div>
     );
   }

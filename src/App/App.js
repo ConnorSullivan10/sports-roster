@@ -5,8 +5,6 @@ import firebaseConnection from '../helpers/data/connection';
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import Team from '../components/Team/Team';
-import authData from '../helpers/data/authData';
-import playerData from '../helpers/data/playerData';
 import './App.scss';
 
 firebaseConnection();
@@ -14,22 +12,12 @@ firebaseConnection();
 class App extends React.Component {
   state = {
     authed: false,
-    players: [],
-  }
-
-  getPlayers = () => {
-    playerData.getPlayersByUid(authData.getUid())
-      .then((players) => {
-        this.setState({ players });
-      })
-      .catch((errFromTeam) => console.error({ errFromTeam }));
   }
 
   componentDidMount() {
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ authed: true });
-        this.getPlayers();
       } else {
         this.setState({ authed: false });
       }
