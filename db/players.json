@@ -1,0 +1,52 @@
+{
+  "player1" : {
+    "imageUrl": "https://i.pinimg.com/originals/c3/e1/0f/c3e10f1ff3342e02726198a246e6f9a7.jpg",
+    "name" : "Peter Lafleur",
+    "uid" : "TCvXbX3k1veQIuKMKOEAiElMQ0o1"
+  },
+  "player2" : {
+    "imageUrl": "https://66.media.tumblr.com/b86356264a78d30e316f3a4ee4797203/tumblr_pq2oq1jxdC1woet65o1_400.jpg",
+    "name" : "Kate Veatch",
+    "uid" : "TCvXbX3k1veQIuKMKOEAiElMQ0o1"
+  },
+  "player3" : {
+    "imageUrl": "https://cdn.moviestillsdb.com/i/500x/hy3ckivs/dodgeball-a-true-underdog-story-lg.jpg",
+    "name" : "Justin",
+    "uid" : "TCvXbX3k1veQIuKMKOEAiElMQ0o1"
+  },
+  "player4" : {
+    "imageUrl": "https://i.pinimg.com/236x/47/da/b1/47dab11c5d1a79232b209a90713c2d39--i-go-to-work-hard-to-find.jpg",
+    "name" : "Gordon",
+    "uid" : "TCvXbX3k1veQIuKMKOEAiElMQ0o1"
+  },
+  "player5" : {
+    "imageUrl": "https://filmreviewlondon.files.wordpress.com/2011/07/stevethepirate-1.jpg",
+    "name" : "Steve The Pirate",
+    "uid" : "TCvXbX3k1veQIuKMKOEAiElMQ0o1"
+  },
+  "player6" : {
+    "imageUrl": "http://4.bp.blogspot.com/-1P3qhBL-qvk/T6dcQL1uG2I/AAAAAAAACdQ/fE7uL6fHCsA/s1600/Joel-Moore-300x300.jpg",
+    "name" : "Owen",
+    "uid" : "TCvXbX3k1veQIuKMKOEAiElMQ0o1"
+  },
+  "player7" : {
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRooCqWuctv4z5bFiX8fwgIajxF39sKP9eZLXRGfqqL8WhBlKC&s",
+    "name" : "Dwight",
+    "uid" : "TCvXbX3k1veQIuKMKOEAiElMQ0o1"
+  },
+  "player8" : {
+    "imageUrl": "https://i.pinimg.com/originals/c3/bd/98/c3bd98b3e58ff126dd2c84ebb5c67059.jpg",
+    "name" : "Patches O'Houlihan",
+    "uid" : "TCvXbX3k1veQIuKMKOEAiElMQ0o1"
+  },
+  "player9" : {
+    "imageUrl": "https://vignette.wikia.nocookie.net/villains/images/d/d9/Wgoodman.jpg/revision/latest?cb=20110326004743",
+    "name" : "White Goodman",
+    "uid" : "globogym"
+  },
+  "player10" : {
+    "imageUrl": "https://cdn.moviestillsdb.com/i/500x/51yoikq0/dodgeball-a-true-underdog-story-lg.jpg",
+    "name" : "Me'Shell Jones",
+    "uid" : "globogym"
+  }
+}
