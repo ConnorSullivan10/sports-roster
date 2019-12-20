@@ -31,6 +31,14 @@ class Team extends React.Component {
       .catch((errorFromSaveBoard) => console.error({ errorFromSaveBoard }));
   }
 
+  deleteSinglePlayer = (playerId) => {
+    playerData.deletePlayer(playerId)
+      .then(() => {
+        this.getPlayers();
+      })
+      .catch((errorFromDeletePlayer) => console.error({ errorFromDeletePlayer }));
+  };
+
   setShowPlayerForm = () => {
     this.setState({ showPlayerForm: true });
   }
@@ -41,7 +49,7 @@ class Team extends React.Component {
         <button onClick={this.setShowPlayerForm}>Add a new player</button>
         { this.state.showPlayerForm && <PlayerForm addPlayer={this.addPlayer} /> }
         <div className="Team-cards d-flex flex-wrap">
-          {this.state.players.map((player) => (<Player key={player.id} player={player} />))}
+          {this.state.players.map((player) => (<Player key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer} />))}
         </div>
       </div>
     );
