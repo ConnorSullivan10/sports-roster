@@ -22,4 +22,6 @@ const getPlayersByUid = (uid) => new Promise((resolve, reject) => {
     });
 });
 
-export default { getPlayersByUid };
+const saveNewPlayer = (playerInfo) => axios.post(`${baseUrl}/players.json`, playerInfo);
+
+export default { getPlayersByUid, saveNewPlayer };
