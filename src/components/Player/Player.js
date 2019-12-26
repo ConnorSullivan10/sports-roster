@@ -30,10 +30,12 @@ class Player extends React.Component {
       <div className="players col-4">
         <div className="card">
           <div className="card-body">
-            <button className="btn btn-danger delete-player" onClick={this.deletePlayerEvent}>X</button>
+            <div className="card-header d-flex flex-row">
+              <button className="btn btn-success edit-player" onClick={this.setEditPlayerEvent}>Edit</button>
+              <p className="card-title">{player.name}</p>
+              <button className="btn btn-danger delete-player" onClick={this.deletePlayerEvent}>X</button>
+            </div>
             <img id="player-pic" src={player.imageUrl} alt="pic"/>
-            <h5 className="card-title">{player.name}</h5>
-            <button className="btn btn-success" onClick={this.setEditPlayerEvent}>Edit Player</button>
           </div>
         </div>
       </div>

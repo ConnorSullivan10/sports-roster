@@ -3,6 +3,7 @@ import Player from '../Player/Player';
 import authData from '../../helpers/data/authData';
 import playerData from '../../helpers/data/playerData';
 import PlayerForm from '../PlayerForm/PlayerForm';
+import './Team.scss';
 
 class Team extends React.Component {
   state = {
