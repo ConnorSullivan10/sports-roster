@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import './MyNavbar.scss';
 
 class MyNavbar extends React.Component {
   static propTypes = {
@@ -18,8 +19,11 @@ class MyNavbar extends React.Component {
 
     return (
       <div className="MyNavbar">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <span className="navbar-brand" href="#">Sports Roster</span>
+        <nav className="navbar navbar-expand-lg navbar-dark">
+          <span className="navbar-brand" href="#">
+            <img className="nav-logo" src="https://www.nflalumni.org/wp-content/uploads/2017/10/Tennessee_Titans_logo.svg_.png" alt=""/>
+          </span>
+          <span className="navbar-brand nav-text" href="#">Titans Roster</span>
           <button className="navbar-toggler" type="button"
             data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>

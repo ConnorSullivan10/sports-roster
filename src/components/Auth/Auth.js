@@ -12,8 +12,11 @@ class Auth extends React.Component {
 
   render() {
     return (
-      <div className="Auth">
+      <div className="Auth d-flex flex-column">
         <button className="btn btn-danger" onClick={this.loginClickEvent}>Log In With Google</button>
+        <span>
+          <img className="auth-image" src="http://loodibee.com/wp-content/uploads/nfl-tennessee-titans-team-logo.png" alt=""/>
+        </span>
       </div>
     );
   }
