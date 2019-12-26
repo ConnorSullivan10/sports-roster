@@ -10,6 +10,7 @@ class PlayerForm extends React.Component {
     playerToEdit: playerShape.playerShape,
     editMode: PropTypes.bool,
     updatePlayer: PropTypes.func,
+    setHidePlayerForm: PropTypes.func,
   }
 
   state = {
@@ -61,6 +62,7 @@ class PlayerForm extends React.Component {
     const { editMode } = this.props;
     return (
       <form className='col-6 offset-3 BoardForm'>
+        <button className="btn btn-danger hide-form" onClick={this.props.setHidePlayerForm}>X</button>
         <div className="form-group">
           <label htmlFor="order-name">Player Name:</label>
           <input
