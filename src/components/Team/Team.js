@@ -7,6 +7,8 @@ import PlayerForm from '../PlayerForm/PlayerForm';
 class Team extends React.Component {
   state = {
     players: [],
+    editMode: false,
+    playerToEdit: {},
     showPlayerForm: false,
   }
 
@@ -28,7 +30,16 @@ class Team extends React.Component {
         this.getPlayers();
         this.setState({ showPlayerForm: false });
       })
-      .catch((errorFromSaveBoard) => console.error({ errorFromSaveBoard }));
+      .catch((errorFromSavePlayer) => console.error({ errorFromSavePlayer }));
+  }
+
+  updatePlayer = (playerId, updatedPlayer) => {
+    playerData.updatePlayer(playerId, updatedPlayer)
+      .then(() => {
+        this.getPlayers();
+        this.setState({ editMode: false, showPlayerForm: false });
+      })
+      .catch((errorFromUpdatePlayer) => console.error({ errorFromUpdatePlayer }));
   }
 
   deleteSinglePlayer = (playerId) => {
@@ -43,13 +54,21 @@ class Team extends React.Component {
     this.setState({ showPlayerForm: true });
   }
 
+  setEditMode = (editMode) => {
+    this.setState({ editMode, showPlayerForm: true });
+  }
+
+  setPlayerToEdit = (player) => {
+    this.setState({ playerToEdit: player });
+  }
+
   render() {
     return (
       <div className="Team">
         <button onClick={this.setShowPlayerForm}>Add a new player</button>
-        { this.state.showPlayerForm && <PlayerForm addPlayer={this.addPlayer} /> }
+        { this.state.showPlayerForm && <PlayerForm addPlayer={this.addPlayer} editMode={this.state.editMode} playerToEdit={this.state.playerToEdit} updatePlayer={this.updatePlayer} /> }
         <div className="Team-cards d-flex flex-wrap">
-          {this.state.players.map((player) => (<Player key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer} />))}
+          {this.state.players.map((player) => (<Player key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer} setEditMode={this.setEditMode} setPlayerToEdit={this.setPlayerToEdit}/>))}
         </div>
       </div>
     );

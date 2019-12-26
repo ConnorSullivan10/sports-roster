@@ -1,16 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import authData from '../../helpers/data/authData';
+import playerShape from '../../helpers/props/playerShape';
 
 
 class PlayerForm extends React.Component {
   static propTypes = {
     addPlayer: PropTypes.func,
+    playerToEdit: playerShape.playerShape,
+    editMode: PropTypes.bool,
+    updatePlayer: PropTypes.func,
   }
 
   state = {
     playerName: '',
     playerImageUrl: '',
+  }
+
+  componentDidMount() {
+    const { playerToEdit, editMode } = this.props;
+    if (editMode) {
+      this.setState({ playerName: playerToEdit.name, playerImageUrl: playerToEdit.imageUrl });
+    }
   }
 
   savePlayerEvent = (e) => {
@@ -35,7 +46,19 @@ class PlayerForm extends React.Component {
     this.setState({ playerImageUrl: e.target.value });
   }
 
+  updatePlayerEvent = (e) => {
+    e.preventDefault();
+    const { updatePlayer, playerToEdit } = this.props;
+    const updatedPlayer = {
+      name: this.state.playerName,
+      imageUrl: this.state.playerImageUrl,
+      uid: playerToEdit.uid,
+    };
+    updatePlayer(playerToEdit.id, updatedPlayer);
+  }
+
   render() {
+    const { editMode } = this.props;
     return (
       <form className='col-6 offset-3 BoardForm'>
         <div className="form-group">
@@ -60,7 +83,10 @@ class PlayerForm extends React.Component {
             onChange={this.imageChange}
           />
         </div>
-        (<button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>)
+        {
+          (editMode) ? (<button className="btn btn-warning" onClick={this.updatePlayerEvent}>Update Player</button>)
+            : (<button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>)
+        }
       </form>
     );
   }
