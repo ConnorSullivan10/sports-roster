@@ -5,6 +5,7 @@ import playerData from '../../helpers/data/playerData';
 import PlayerForm from '../PlayerForm/PlayerForm';
 import './Team.scss';
 
+
 class Team extends React.Component {
   state = {
     players: [],
@@ -70,7 +71,7 @@ class Team extends React.Component {
   render() {
     return (
       <div className="Team">
-        <button onClick={this.setShowPlayerForm}>Add a new player</button>
+        <button className="addPlayer" onClick={this.setShowPlayerForm}>Add a new player</button>
         { this.state.showPlayerForm && <PlayerForm addPlayer={this.addPlayer} editMode={this.state.editMode} playerToEdit={this.state.playerToEdit} updatePlayer={this.updatePlayer} setHidePlayerForm={this.setHidePlayerForm}/> }
         <div className="Team-cards d-flex flex-wrap">
           {this.state.players.map((player) => (<Player key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer} setEditMode={this.setEditMode} setPlayerToEdit={this.setPlayerToEdit}/>))}

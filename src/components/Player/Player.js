@@ -31,7 +31,7 @@ class Player extends React.Component {
         <div className="card">
           <div className="card-body">
             <div className="card-header d-flex flex-row">
-              <button className="btn btn-success edit-player" onClick={this.setEditPlayerEvent}>Edit</button>
+              <button className="btn btn-warning edit-player" onClick={this.setEditPlayerEvent}>Edit</button>
               <p className="card-title">{player.name}</p>
               <button className="btn btn-danger delete-player" onClick={this.deletePlayerEvent}>X</button>
             </div>
