@@ -7,17 +7,17 @@
 3. React: For bundling components and building the UI
 
 ## Description
-Use this application to create a player roster for your ultimate Titans team. All you have to do is login using your google account, and you'll be able to add, edit, and delete Players from your Titans team by simply adding the player name and image URL for each player.
+Use this application to create a player roster for your ultimate Titans team. All you have to do is login using your Google account, and you'll be able to add, edit, and delete Players from your Titans roster by simply adding the player name and image URL for each player.
 
 ## Screenshots
 
-![Sports Roster Preview 1]()
+![Sports Roster Preview 1](https://raw.githubusercontent.com/ConnorSullivan10/sports-roster/master/screenshots/sportsRoster1.PNG)
 
-![Sports Roster Preview 2]()
+![Sports Roster Preview 2](https://raw.githubusercontent.com/ConnorSullivan10/sports-roster/master/screenshots/sportsRoster2.PNG)
 
-![Sports Roster Preview 3]()
+![Sports Roster Preview 3](https://raw.githubusercontent.com/ConnorSullivan10/sports-roster/master/screenshots/sportsRoster3.PNG)
 
-![Sports Roster Preview 4]()
+![Sports Roster Preview 4](https://raw.githubusercontent.com/ConnorSullivan10/sports-roster/master/screenshots/sportsRoster4.PNG)
 
 
 ## How to run
