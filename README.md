@@ -26,6 +26,8 @@ Use this application to create a player roster for your ultimate Titans team. Al
 2. Navigate to the project folder in command line interface and type: `http-server -p 8888`  
 3. This will show at: `http://localhost:8888` in your internet browser.  
 
+Or you can open your internet browser and navigate to the project's deployed link:
+https://sports-roster.firebaseapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
